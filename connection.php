@@ -1,9 +1,9 @@
 <?php 
 
-    $HostName = 'localhost:3306';
+    $HostName = 'localhost:3312';
     $User = 'root';
     $Password = '';
-    $DataBase = 'PiJoaoVictor';
+    $DataBase = 'ForumOnline';
 
     $connect = mysqli_connect($HostName, $User, $Password, $DataBase) or die ('Deu algo errado');
 
