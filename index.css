@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@300&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    background-color: #343a40;
+    font-family: 'Roboto', sans-serif;
+    background: #160f29;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: space-between;
+}
+
+header{
+    height: 10%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -webkit-box-shadow: 0px 11px 16px -6px rgba(0,0,0,0.73); 
+box-shadow: 0px 11px 16px -6px rgba(0,0,0,0.73);    
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+header .navLinks{
+    display: flex;
+    justify-content: space-around;
+    margin: 10%;
+}
+header .logo{
+    margin: 0 0 0 5%;
+}
+header .logo a{
+    text-decoration: none;
+    color: white;
+
+}
+header .navLinks a{
+    margin: 20%;
+    text-decoration: none;
+    color: #fff;
+    font-size: large;
+    border: 2px solid #ffff;
+    padding: 10px;
+    border-radius: 10px;
+}
+header .navLinks a:nth-child(2){
+    border: 2px solid #80ed99;
+    transition: 0.5s;
+}
+header .navLinks a:nth-child(2):hover{
+    background-color: #80ed99;
+    color: black;
+    transition: 0.5s;
+}
+
+main{
+    height: 90%;
+    width: 100%;
+    padding: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .content{
+    
+
+    height: 60%;
+    width: 60%;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-box-shadow: 6px 7px 16px -6px rgba(0,0,0,0.83); 
+    box-shadow: 6px 7px 16px -6px rgba(0,0,0,0.83);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+main h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    font-size: 6em;
+    color: transparent;
+    text-transform: uppercase;
+}
+
+main h2 span:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ffff;
+    transition: 0.5s;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    overflow: hidden;
+}
+
+main h2:hover span:nth-child(1){
+    transform: translateY(-36px);
+}
+
+main h2 span:nth-child(2){
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ffff;
+    transition: 0.5s;
+    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+    overflow: hidden;
+}
+
+main h2:hover span:nth-child(2){
+    transform: translateY(36px);
+}
+
+main h2 span:nth-child(3){
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translatey(-50%) scaleY(0);
+    width: 95%;
+    background: #0cb2ff;
+    font-size: 0.25em;
+    font-weight: bold;
+    letter-spacing: 0.7em;
+    text-align: center;
+    padding-left: 20px;
+    margin-left: 5px;
+    transition: 0.5s;
+    color: black;
+}
+
+main h2:hover span:nth-child(3){
+    transform: translateY(-50%) scaleY(1);
+}
+ /* Fundo animado */
+ 
+ .bolhas{
+    position: relative;
+    display: flex;
+}
+ .bolhas span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+    0 0 50px #4fc3dc,
+    0 0 100px #4fc3dc;
+    animation: animation 15s linear infinite;
+    animation-duration: calc(120s / var(--i));
+}
+ .bolhas span:nth-child(even){
+     background:#80ed99 ;
+     box-shadow: 0 0 0 10px #80ed9944,
+    0 0 50px #80ed99,
+     0 0 100px #80ed99;
+}
+
+@keyframes animation {
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-80vh) scale(1);
+    }
+    
+}
+
