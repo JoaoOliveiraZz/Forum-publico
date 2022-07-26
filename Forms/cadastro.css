@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@500;900&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, input{
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    background: #ffff;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.forms-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.container::before{
+    content: '';
+    position: absolute;
+    height: 2000px;
+    width: 2000px;
+    top: -10%;
+    right: 48%;
+    background-image: linear-gradient(-45deg, #20dbc2 0%, #00bfa6 100%);
+    transform: translateY(-50%);
+    border-radius: 50%;
+    transition: 1.8s ease-in-out;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5rem;
+    padding: 0 5rem;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.title{
+    font-size: 2.2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.input-field{
+    max-width: 380px;
+    width: 100%;
+    height: 55px;
+    background: #f0f0f0;
+    margin: 10px 0;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+}
+
+.input-field i{
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    font-size: 1.5rem;
+}
+
+.input-field input{
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.input-field input:placeholder-shown{
+    color: #aaa;
+    font-weight: 500;
+}
+
+.btn{
+    width: 150px;
+    height: 49px;
+    outline: none;
+    border: none;
+    border-radius: 48px;
+    background-color: #20dbc2;
+    color: #ffff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    transition: all 0.5s;
+
+}
+
+.btn:hover{
+    background: #00bfa6;
+}
+
+.signin-signup{
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr;
+    transition: .9s .6s ease-in-out;
+    z-index: 5;
+}
+.signup-signup{
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(500%, 500%);
+    display: grid;
+    grid-template-columns: 1fr;
+    transition: .9s .6s ease-in-out;
+    z-index: 0;
+}
+
+form.sign-in-form{
+    z-index: 5;
+    transition: .9s .6s ease-in-out;
+}
+form.sign-up-form{
+    z-index: 1;
+    opacity: 0;
+    transition: .9s .6s ease-in-out;
+}
+
+.image{
+    width: 100%;
+    transition: 1.1s 0.4s ease-in-out;
+}
+
+.panels-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.panel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.panel-left{
+    padding: 3rem 17% 2rem 12%; 
+}
+.panel-rigth{
+    padding: 3rem 12% 2rem 17%; 
+}
+.panel .content{
+    color: #ffff;
+    transition: .9s .6s ease-in-out;
+    /* padding-right: 20px; */
+}
+
+.panel h3{
+    font-weight: 600;
+    line-height: 1;
+    font-size: 1.5rem;
+}
+
+.panel p{
+    font-size: .95rem;
+    padding: 0.7rem 0;
+}
+
+.btn.transparent{
+    margin: 0;
+    background-color: none;
+    border: 2px solid #fff;
+    width: 130px;
+    height: 41px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.panel-rigth .content,
+.panel-rigth .image{
+    transform: translateX(800px);
+}
+.panel-left .image{
+    margin-left: 40%;
+}
+
+.panel-rigth .image{
+    margin-right: 40%;
+}
+
+/* Animações */
+
+.container.signup_mode::before{
+    transform: translate(100%, -50%);
+    right: 52%;
+}
+
+.container.signup_mode .panel-left .image,
+.container.signup_mode .panel-left .content{
+    transform: translate(-800px);
+}
+
+.container.signup_mode .panel-rigth .image,
+.container.signup_mode .panel-rigth .content{
+    transform: translateX(0%);
+}
+
+.container.signup_mode .panel-left {
+    pointer-events: none;
+}
+
+.container.signin-signup .panel-rigth{
+    pointer-events: all;
+}
+
+.container.signup_mode .signin-signup{
+    left: 25%;
+}
+.container.signup_mode form.sign-in-form{
+    z-index: 1;
+    opacity: 0;
+}
+.container.signup_mode form.sign-up-form{
+    z-index: 2;
+    opacity: 1;
+}
+
+.container.signup_mode .signup-signup{
+    z-index: 5;
+    transform: translate(-250%, -50%);
+}
+
+
+
+
+
+
+
+
+
+
+
