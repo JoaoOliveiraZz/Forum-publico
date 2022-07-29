@@ -9,10 +9,10 @@ CREATE TABLE `Usuario` (
 
 CREATE TABLE `Post` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `user_id` int UNIQUE NOT NULL,
+  `user_id` int NOT NULL,
   `Titulo` varchar(255),
   `Linguagem` varchar(255),
-  `Texto` text,
+  `Texto` varchar(500),
   `DataPub` datetime
 );
 

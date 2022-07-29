@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,18 +17,22 @@
 
         if(isset($_POST['logado'])){
 
-        include('Validação.php');
+            include('Valida.php');
 
         }
         include('../Forms/Cadastro.php');
+        
     }else{
 
         if(isset($_GET['logout'])){
             unset($_SESSION['login']);
             session_destroy();
             header("location: Login.php");
+        }else{
+
+            header('Location: ../User/Home.php');
         }
-        include('../User/Home.php');
+        //JoaoVictor9742@gxp
     }
 
 ?>
