@@ -19,9 +19,6 @@
 
     $post = $connect -> query($sqlPost);
 
-
-
-    
 ?>
 
 <!DOCTYPE html>
@@ -86,15 +83,40 @@
         <div class="Posts">
             <?php 
                 while($UserPost = mysqli_fetch_assoc($post)){
-                    echo "<a class='postLink' href=".$UserPost['id'].">".$UserPost['Texto']."</a>";
+                    echo "<a class='postLink' href=".$UserPost['id'].">".$UserPost['Titulo']."</a>";
                 }
             ?>
         </div>
     </div>
     <div class="box">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam odit voluptatem praesentium eos iure dolorum doloribus suscipit nam incidunt, ab consequatur, nobis non, optio modi explicabo id similique vitae neque.
-        Totam quo in vitae error, dolorum eveniet explicabo ad, voluptates laborum assumenda repudiandae. Consectetur perferendis illo soluta voluptates ab, consequatur cupiditate adipisci officiis a, quis molestias corrupti maiores, incidunt explicabo.
-        Praesentium possimus nemo nisi, sunt magni minus perferendis libero quo quam exercitationem at provident officiis laboriosam sed necessitatibus sapiente totam voluptatibus adipisci voluptas. Vero, ab omnis fugiat maiores consequatur harum.</p>
+        <div class="Name">
+            <h2>
+                Tópicos recentes sobre <?php
+                    echo "<span>".$UserData['FavLinguagem']."!</span>";
+                ?>
+            </h2>
+            <div class="Posts">
+                <?php 
+
+                    $Lang = $UserData['FavLinguagem'];
+        
+                    $sqlFav = "SELECT * FROM Post WHERE Linguagem = '$Lang' ORDER BY DataPub DESC";
+
+                    $langPost = $connect -> query($sqlFav);
+
+                    $Contador = 0;
+
+                    while($LangFav = mysqli_fetch_assoc($langPost)){
+                        echo "<a class='postLink' href='".$LangFav['id']."'>".$LangFav['Titulo']."</a>";
+                        $Contador++;
+                        if($Contador == 5){
+                            break;
+                        }
+                    }
+
+                ?>
+            </div>
+        </div>
     </div>
     
 </body>
