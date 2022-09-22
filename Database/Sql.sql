@@ -18,8 +18,8 @@ CREATE TABLE `Post` (
 
 CREATE TABLE `Comentarios` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `user_id` int UNIQUE NOT NULL,
-  `post_id` int UNIQUE NOT NULL, 
+  `user_id` int NOT NULL,
+  `post_id` int NOT NULL, 
   `Texto` varchar(255),
   `DataComent` datetime
 );

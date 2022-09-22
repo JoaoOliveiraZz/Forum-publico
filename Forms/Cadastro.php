@@ -69,7 +69,7 @@
                     <h3>Um de nós</h3>
                     <p>Seja bem vindo de volta, programador. Já estavamos com saudades, faça login e venha desfrutar de nossa plataforma :)
                     </p>
-                    <a href="../index.php">Voltar a Home</a>
+                    <!-- <a href="../index.php">Voltar a Home</a> -->
                     <button class="btn transparent" id="sign-in-button">Login</button>
                 </div>
                 <img src="img/sapiens.svg" alt="Tablet" class="image">

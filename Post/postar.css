@@ -11,26 +11,18 @@
     font-family: 'Popins', sans-serif;
 }
 
-section{
-    background: url('./bg.svg') no-repeat;
-    background-size:contain;
-    background-position:right;
-    width: 100%;
-    min-height: 100vh;
-    
-    /* Posicionamento */
+body{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    position: relative;
+    align-items: center;
+    height: 100vh;
 }
 
 header{
     
     width: 100%;
     padding: 30px 100px;
-
-
+    
     /* Posicionamento */
     position: relative;
     top: 0;
@@ -71,47 +63,57 @@ header .navigation a:hover{
     border: none;
 }
 
-.content{
-    max-width: 650px;
-    margin: 60px 110px;
+.box{
+    border: 2px solid green;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
-.content .info h2{
-    color: #000;
+.box .post{
+    border: 2px solid red;
+    margin: 10px;
+}
+.box .post .header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 10px;
+}
+.box .post .header p{
     text-transform: uppercase;
-    font-size: 60px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
+    font-weight: 700;
 }
-
-.content .info h2 span{
-    font-weight: 600;
-    color: var(--Secundary);
-    font-size: 55px;
+.box .post .header .Lang{
+    display: none;
 }
-
-.content .info p{
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 30px;
+.box .post .header .image{
+    min-width: 30px;
+    max-width: 30px;
 }
-
-.content .info .infoBtn{
-    text-decoration: none;
-    border: 3px solid var(--Secundary);
-    border-radius: 7px;
+.box .post .body{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.box .post .body p{
+    margin: 30px;
+}
+.box .post .footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
     padding: 10px;
-    color: #000;
-    transition: 0.5s ease-in-out;
+}
+.box .post .footer button{
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 3px;
+    background-color: var(--Secundary);
     font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: uppercase;
 }
-
-.content .info .infoBtn:hover{
-    background: var(--Secundary);
-    color: #fff;
-}
-
-
-
 

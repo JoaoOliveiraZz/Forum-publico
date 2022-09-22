@@ -5,7 +5,7 @@
          <div class="navigation">
             <a href="#">Sobre</a>
             <a href="#">Contato</a>
-            <a href="./User/Home.php">Explorar</a>
+            <a href="../User/Explorar.php">Explorar</a>
             <a href="./Forms/Login.php?logout">Sair</a>
         </div>
 </header>

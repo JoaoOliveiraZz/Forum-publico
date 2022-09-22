@@ -83,9 +83,10 @@
         <div class="Posts">
             <?php 
                 while($UserPost = mysqli_fetch_assoc($post)){
-                    echo "<a class='postLink' href=".$UserPost['id'].">".$UserPost['Titulo']."</a>";
+                    echo "<a class='postLink' href='../Post/Post.php?id=".$UserPost['id']."'>".$UserPost['Titulo']."</a>";
                 }
             ?>
+            <a href="../Post/Post.php?id"></a>
         </div>
     </div>
     <div class="box">
@@ -107,7 +108,7 @@
                     $Contador = 0;
 
                     while($LangFav = mysqli_fetch_assoc($langPost)){
-                        echo "<a class='postLink' href='".$LangFav['id']."'>".$LangFav['Titulo']."</a>";
+                        echo "<a class='postLink' href='../Post/Post.php?id=".$LangFav['id']."'>".$LangFav['Titulo']."</a>";
                         $Contador++;
                         if($Contador == 5){
                             break;
