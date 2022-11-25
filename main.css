@@ -8,15 +8,19 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: 'Popins', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    height: 100vh;
 }
 
-section{
+main{
     background: url('./bg.svg') no-repeat;
     background-size:contain;
     background-position:right;
     width: 100%;
-    min-height: 100vh;
+    min-height: 95vh;
     
     /* Posicionamento */
     display: flex;
@@ -28,6 +32,7 @@ section{
 header{
     
     width: 100%;
+    height: 5%;
     padding: 30px 100px;
 
 
@@ -40,15 +45,10 @@ header{
 
 }
 
-header .logo{
-    position: relative;
-    color: #000;
-    font-size: 30px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 1px;
-
+header .logo img{
+    height: 200px;
+    padding: 0;
+    margin: 0;
 }
 
 header .navigation a{
@@ -111,6 +111,71 @@ header .navigation a:hover{
     color: #fff;
 }
 
+.sobre{
+    height: 100vh;
+    background: url('section.svg');
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: left;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
 
+section .content{
+    width: 40%;
+    position: absolute;
+    right: 2%;
+}
+
+section .content h1{
+    margin-bottom: 5%;
+}
+
+.call{
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.call .icon{
+    height: 30px;
+    width: 40px;
+    transition: all 1s;
+}
+.call .icon:hover{
+    transform: translateY(-30%);
+}
+
+#sobre{
+    height: 95.2%;
+}
+
+.desenvolvido{
+    background: url('desenvolvimento.svg') no-repeat;
+    background-position: right;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: left;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+section div p{
+    text-indent: 2em;
+}
+section div p a{
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid #6C63FF;
+}
 
 

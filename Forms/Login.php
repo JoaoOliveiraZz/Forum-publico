@@ -13,7 +13,7 @@
 
     include_once('../Database/connection.php');
 
-    if(!isset($_SESSION['login'])){
+    if(!isset($_SESSION['login']) && !isset($_SESSION['adm'])){
 
         if(isset($_POST['logado'])){
 
@@ -25,12 +25,24 @@
     }else{
 
         if(isset($_GET['logout'])){
-            unset($_SESSION['login']);
+            if(isset($_SESSION['adm'])){
+                unset($_SESSION['adm']);
+            }else{
+                unset($_SESSION['login']);
+            }
             session_destroy();
             header("location: Login.php");
         }else{
-
-            header('Location: ../User/Home.php');
+            // if($_SESSION['login'] == 1){
+            //     header('Location: ../Adm/Dashboard.php');
+            // }else{
+            //     header('Location: ../User/Home.php');
+            // }
+            if(isset($_SESSION['adm'])){
+                header('Location: ../Adm/index.php');
+            }else{
+                header('Location: ../User/Home.php');
+            }
         }
         //JoaoVictor9742@gxp
     }

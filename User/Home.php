@@ -34,7 +34,16 @@
 </head>
 <body>
 
-    <?php include('navLogado.php') ?>
+    <header>
+        <h2>For(um)</h2>
+         <div class="navigation">
+            <a href="../index.php">Sobre</a>
+            <a href="">Contato</a>
+            <a href="./Explorar.php">Explorar</a>
+            <a href="../Forms/Login.php?logout">Sair</a>
+        </div>
+    </header>
+
 
     <div class="box">
         <div class="Name">

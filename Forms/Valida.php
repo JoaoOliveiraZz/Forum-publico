@@ -4,21 +4,29 @@
     $Senha = (isset($_POST['Senha'])) ? $_POST['Senha'] : '';
 
     if($Email == '' || $Senha == ''){
-        echo 'Preencha todos os campos!';
+        echo "<script>
+            alert('Preencha todos os campos')
+        </script>";
     }else{
 
-        $sql = "SELECT * FROM Usuario where Email = '$Email'";
+        $Senha = md5($Senha);
+        $sql = "SELECT * FROM Usuario where Email = '$Email' AND Senha = '$Senha'";
         $result = $connect -> query($sql);
 
         $DataUser = mysqli_fetch_assoc($result);
 
-        $Senha = md5($Senha);
 
-        if($Email == $DataUser['Email'] && $Senha == $DataUser['Senha']){
-            $_SESSION['login'] = $DataUser['id'];
-            header('location: Login.php');
+        if($result -> num_rows != 0){
+                if($DataUser['Perfil'] == 1){
+                    $_SESSION['adm'] = $DataUser['id'];
+                }else{
+                    $_SESSION['login'] = $DataUser['id'];
+                }
+                // header('location: Login.php');
         }else{
-            echo 'Não Logado';
+            echo "<script>
+                alert('Login inválido, tente novamente')
+            </script>";
         }
 
     }

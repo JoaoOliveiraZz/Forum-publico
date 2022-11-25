@@ -8,12 +8,14 @@
     $Idade = $_POST['Idade'];
     $Linguagem = $_POST['LinguagemFav'];
 
-    $sql = "INSERT INTO Usuario (Nome, Email, Senha, Idade, FavLinguagem) VALUES ('$Nome','$Email','$Senha','$Idade','$Linguagem')";
+    $sql = "INSERT INTO Usuario (Nome, Email, Senha, Idade, FavLinguagem, Perfil) VALUES ('$Nome','$Email','$Senha','$Idade','$Linguagem', 2)";
 
     if(mysqli_query($connect, $sql)){
         header('location: ../index.php');
     }else{
-        echo "Algo deu errado";
+        echo "<script>
+            alert('Seu cadastro deu errado, verifique se preencheu todos os campos. Se o problema persistir entre em contato com o nosso admnistrador')
+        </script>";
     }
 
 

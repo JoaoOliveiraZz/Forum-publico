@@ -4,8 +4,11 @@ CREATE TABLE `Usuario` (
   `Email` varchar(255),
   `Senha` varchar(255),
   `Idade` int,
-  `FavLinguagem` varchar(255)
+  `FavLinguagem` varchar(255),
+  `Perfil` INT
 );
+
+INSERT INTO Usuario (Nome, Email, Senha, Idade, FavLinguagem, Perfil) VALUES ('Adm','adm@gmail.com','adm','18','Js', 1);
 
 CREATE TABLE `Post` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
@@ -27,6 +30,15 @@ CREATE TABLE `Comentarios` (
 CREATE TABLE `PostDeUser` (
   `usuario_id` int
 );
+
+CREATE TABLE `Contato`(
+  `id`int PRIMARY KEY AUTO_INCREMENT,
+  `id_user` int NOT NULL,
+  `Titulo` VARCHAR(255),
+  `Texto` VARCHAR(500)
+);
+
+INSERT INTO `Contato` (id_user, Titulo, Texto) VALUES (2, 'Teste', 'lkjsdlkfjalskdjflkjasdfl');
 
 ALTER TABLE `PostDeUser` ADD FOREIGN KEY (`usuario_id`) REFERENCES `Usuario` (`id`);
 
