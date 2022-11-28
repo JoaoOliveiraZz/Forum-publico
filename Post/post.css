@@ -16,7 +16,6 @@ body{
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    background: url('./img/Post.svg');
     background-size: 50%;
     background-position: 0.5% 500%;
     background-repeat: no-repeat;

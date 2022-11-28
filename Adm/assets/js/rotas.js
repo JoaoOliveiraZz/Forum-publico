@@ -1,15 +1,14 @@
-
-
-function showProductItems(){  
+function showLog(){
     $.ajax({
-        url:"./adminView/viewAllProducts.php",
+        url:"./adminView/viewLog.php",
         method:"post",
         data:{record:1},
-        success:function(data){
+        success: (data)=>{
             $('.allContent-section').html(data);
         }
-    });
+    })
 }
+
 function showPosts(){  
     $.ajax({
         url:"./adminView/viewPosts.php",
@@ -52,42 +51,6 @@ function showUsers(){
     });
 }
 
-function showOrders(){
-    $.ajax({
-        url:"./adminView/viewAllOrders.php",
-        method:"post",
-        data:{record:1},
-        success:function(data){
-            $('.allContent-section').html(data);
-        }
-    });
-}
-
-function ChangeOrderStatus(id){
-    $.ajax({
-       url:"./controller/updateOrderStatus.php",
-       method:"post",
-       data:{record:id},
-       success:function(data){
-           alert('Order Status updated successfully');
-           $('form').trigger('reset');
-           showOrders();
-       }
-   });
-}
-
-function ChangePay(id){
-    $.ajax({
-       url:"./controller/updatePayStatus.php",
-       method:"post",
-       data:{record:id},
-       success:function(data){
-           alert('Payment Status updated successfully');
-           $('form').trigger('reset');
-           showOrders();
-       }
-   });
-}
 
 // Add User
 
@@ -116,127 +79,21 @@ function addUser(){
         }
     })
 }
-// Edit uesr data
 
 
-
-//add product data
-function addItems(){
-    var p_name=$('#p_name').val();
-    var p_desc=$('#p_desc').val();
-    var p_price=$('#p_price').val();
-    var category=$('#category').val();
-    var upload=$('#upload').val();
-    var file=$('#file')[0].files[0];
-
-    var fd = new FormData();
-    fd.append('p_name', p_name);
-    fd.append('p_desc', p_desc);
-    fd.append('p_price', p_price);
-    fd.append('category', category);
-    fd.append('file', file);
-    fd.append('upload', upload);
+// Delete log
+function logDelete(id){
     $.ajax({
-        url:"./controller/addItemController.php",
-        method:"post",
-        data:fd,
-        processData: false,
-        contentType: false,
-        success: function(data){
-            alert('Product Added successfully.');
+        url: './controller/deleteLogController.php',
+        method: "post",
+        data:{record:id},
+        sucess:(data) => {
+            alert('Registro de Log deletado com sucesso');
             $('form').trigger('reset');
-            showProductItems();
+            showLog();
         }
-    });
+    })
 }
-
-//edit product data
-function itemEditForm(id){
-    $.ajax({
-        url:"./adminView/editItemForm.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            $('.allContent-section').html(data);
-        }
-    });
-}
-
-//update product after submit
-function updateItems(){
-    var product_id = $('#product_id').val();
-    var p_name = $('#p_name').val();
-    var p_desc = $('#p_desc').val();
-    var p_price = $('#p_price').val();
-    var category = $('#category').val();
-    var existingImage = $('#existingImage').val();
-    var newImage = $('#newImage')[0].files[0];
-    var fd = new FormData();
-    fd.append('product_id', product_id);
-    fd.append('p_name', p_name);
-    fd.append('p_desc', p_desc);
-    fd.append('p_price', p_price);
-    fd.append('category', category);
-    fd.append('existingImage', existingImage);
-    fd.append('newImage', newImage);
-   
-    $.ajax({
-      url:'./controller/updateItemController.php',
-      method:'post',
-      data:fd,
-      processData: false,
-      contentType: false,
-      success: function(data){
-        alert('Data Update Success.');
-        $('form').trigger('reset');
-        showProductItems();
-      }
-    });
-}
-
-//delete product data
-function itemDelete(id){
-    $.ajax({
-        url:"./controller/deleteItemController.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            alert('Items Successfully deleted');
-            $('form').trigger('reset');
-            showProductItems();
-        }
-    });
-}
-
-// Delete user
-
-
-
-//delete cart data
-function cartDelete(id){
-    $.ajax({
-        url:"./controller/deleteCartController.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            alert('Cart Item Successfully deleted');
-            $('form').trigger('reset');
-            showMyCart();
-        }
-    });
-}
-
-function eachDetailsForm(id){
-    $.ajax({
-        url:"./view/viewEachDetails.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            $('.allContent-section').html(data);
-        }
-    });
-}
-
 
 
 //delete category data
@@ -264,152 +121,32 @@ function userDelete(id){
         }
     });
 }
-// function userDelete(id){
-//     $.ajax({
-//         url: "./controller/deleteUserController.php",
-//         method: "post",
-//         data:{record:id},
-//         success:function(data){
-//             alert('Usuario deleteado com sucesso');
-//             $('form'.trigger('reset'));
-//             showUsers();
-//         }
-//     });
-// }
 
-//delete size data
-function sizeDelete(id){
+
+//delete contato
+function contatoDelete(id){
     $.ajax({
-        url:"./controller/deleteSizeController.php",
+        url:"./controller/deleteContatoController.php",
         method:"post",
         data:{record:id},
         success:function(data){
-            alert('Size Successfully deleted');
+            alert('Contato deletado com sucesso');
             $('form').trigger('reset');
-            showSizes();
+            showProblems();
         }
     });
 }
 
-
-//delete variation data
-function variationDelete(id){
+//delete comentário
+function comentarioDelete(id){
     $.ajax({
-        url:"./controller/deleteVariationController.php",
+        url:"./controller/deleteComentarioController.php",
         method:"post",
         data:{record:id},
         success:function(data){
-            alert('Successfully deleted');
+            alert('Comentário removido com sucesso');
             $('form').trigger('reset');
-            showProductSizes();
-        }
-    });
-}
-
-//edit variation data
-function variationEditForm(id){
-    $.ajax({
-        url:"./adminView/editVariationForm.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            $('.allContent-section').html(data);
-        }
-    });
-}
-
-
-//update variation after submit
-function updateVariations(){
-    var v_id = $('#v_id').val();
-    var product = $('#product').val();
-    var size = $('#size').val();
-    var qty = $('#qty').val();
-    var fd = new FormData();
-    fd.append('v_id', v_id);
-    fd.append('product', product);
-    fd.append('size', size);
-    fd.append('qty', qty);
-   
-    $.ajax({
-      url:'./controller/updateVariationController.php',
-      method:'post',
-      data:fd,
-      processData: false,
-      contentType: false,
-      success: function(data){
-        alert('Update Success.');
-        $('form').trigger('reset');
-        showProductSizes();
-      }
-    });
-}
-function search(id){
-    $.ajax({
-        url:"./controller/searchController.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            $('.eachCategoryProducts').html(data);
-        }
-    });
-}
-
-
-function quantityPlus(id){ 
-    $.ajax({
-        url:"./controller/addQuantityController.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            $('form').trigger('reset');
-            showMyCart();
-        }
-    });
-}
-function quantityMinus(id){
-    $.ajax({
-        url:"./controller/subQuantityController.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            $('form').trigger('reset');
-            showMyCart();
-        }
-    });
-}
-
-function checkout(){
-    $.ajax({
-        url:"./view/viewCheckout.php",
-        method:"post",
-        data:{record:1},
-        success:function(data){
-            $('.allContent-section').html(data);
-        }
-    });
-}
-
-
-function removeFromWish(id){
-    $.ajax({
-        url:"./controller/removeFromWishlist.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            alert('Removed from wishlist');
-        }
-    });
-}
-
-
-function addToWish(id){
-    $.ajax({
-        url:"./controller/addToWishlist.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            alert('Added to wishlist');        
+            showComentarios();
         }
     });
 }

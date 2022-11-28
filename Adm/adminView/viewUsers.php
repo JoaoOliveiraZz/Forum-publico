@@ -13,7 +13,6 @@
         <th class="text-center">Idade</th>
         <th class="text-center">Linguage Favorita</th>
         <th class="text-center">Deletar</th>
-        <th class="text-center">Editar</th>
       </tr>
     </thead>
     <?php
@@ -32,7 +31,6 @@
           <td><?= $row["Idade"] ?></td>
           <td><?= $row["FavLinguagem"] ?></td>
           <td><button class="btn btn-danger" style="height:40px" onclick="userDelete('<?= $row['id'] ?>')">Delete</button></td>
-          <td><button type="button" class="btn btn-info" style="height:40px">Update</button></td>
         </tr>
     <?php
         $count = $count + 1;

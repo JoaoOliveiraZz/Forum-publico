@@ -27,16 +27,30 @@ CREATE TABLE `Comentarios` (
   `DataComent` datetime
 );
 
+INSERT INTO Comentarios (user_id, post_id, Texto, DataComent) VALUES (1,6,'alksdjflkajdlskfjlkajsdf','00-00-00 00:00:00')
+
 CREATE TABLE `PostDeUser` (
   `usuario_id` int
 );
 
 CREATE TABLE `Contato`(
-  `id`int PRIMARY KEY AUTO_INCREMENT,
+  `id_contato`int PRIMARY KEY AUTO_INCREMENT,
   `id_user` int NOT NULL,
   `Titulo` VARCHAR(255),
   `Texto` VARCHAR(500)
 );
+
+SELECT * FROM Contato as c INNER JOIN usuario as u ON c.id_user = u.id;
+
+CREATE TABLE `Log`(
+  `id_log` int PRIMARY KEY AUTO_INCREMENT,
+  `user_id` INT NOT NULL,
+  `login` DATETIME,
+  `logoff` DATETIME
+);
+INSERT INTO Log (user_id, login, logoff) VALUES (1,'2022-11-25','0000-00-00 00:00:00');
+UPDATE Log SET login = '2022-11-25 11:11:11', logoff = '0000-00-00 00:00:00' WHERE id_user = '1';
+SELECT * FROM Log as l INNER JOIN usuario as u ON l.user_id = u.id;
 
 INSERT INTO `Contato` (id_user, Titulo, Texto) VALUES (2, 'Teste', 'lkjsdlkfjalskdjflkjasdfl');
 

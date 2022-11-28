@@ -26,18 +26,19 @@
 
         if(isset($_GET['logout'])){
             if(isset($_SESSION['adm'])){
+                $DataLog = date('Y-m-d H:i:s');
+                $logoff = "UPDATE Log SET logoff = '$DataLog' WHERE user_id = '$_SESSION[adm]'";
+                $result = $connect -> query($logoff);
                 unset($_SESSION['adm']);
             }else{
+                $DataLog = date('Y-m-d H:i:s');
+                $logoff = "UPDATE Log SET logoff = '$DataLog' WHERE user_id = '$_SESSION[login]'";
+                $result = $connect -> query($logoff);
                 unset($_SESSION['login']);
             }
             session_destroy();
             header("location: Login.php");
         }else{
-            // if($_SESSION['login'] == 1){
-            //     header('Location: ../Adm/Dashboard.php');
-            // }else{
-            //     header('Location: ../User/Home.php');
-            // }
             if(isset($_SESSION['adm'])){
                 header('Location: ../Adm/index.php');
             }else{

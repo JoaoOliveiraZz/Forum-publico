@@ -19,12 +19,14 @@ header{
     
     width: 100%;
     padding: 30px 100px;
+    margin-top: 20px;
 
 
     /* Posicionamento */
     position: relative;
     top: 0;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
@@ -103,7 +105,7 @@ header .navigation a:hover{
     flex-direction: row;
 }
 
-.box .Data .Actions a{
+.box .Data .Actions button{
     color: #000;
     background: #e4dddd00;
     text-decoration: none;
@@ -115,6 +117,11 @@ header .navigation a:hover{
     margin: 5px;
     transition: 0.5s ease-in;
     font-weight: 600;
+}
+
+.box .Data .Actions button:hover{
+    background: var(--Terciary);
+    color: #fff;
 }
 
 /* Tópicos */
@@ -142,4 +149,17 @@ header .navigation a:hover{
     font-weight: 600;
     font-size: 20px;
     color: black;
+}
+
+.space{
+    height: 5%;
+}
+
+.post{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.post a:nth-child(2){
+    color: red;
 }

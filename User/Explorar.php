@@ -16,8 +16,8 @@
                 <img src="Logo.png" alt="">
             </a></h2>
             <div class="navigation">
-                <a href="#">Sobre</a>
-                <a href="#">Contato</a>
+                <a href="../index.php">Sobre</a>
+                <a href="../Forms/contato/contatoForm.php">Contato</a>
                 <a href="./Home.php">Home</a>
                 <a href="../Forms/Login.php?logout">Sair</a>
             </div>

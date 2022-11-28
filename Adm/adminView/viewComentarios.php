@@ -8,7 +8,7 @@
         <th class="text-center">Usuário</th>
         <th class="text-center">Texto</th>
         <th class="text-center">Data</th>
-        <th class="text-center" colspan="2">Action</th>
+        <th class="text-center" colspan="2">Ação</th>
       </tr>
     </thead>
     <?php
@@ -21,18 +21,10 @@
     ?>
     <tr>
       <td><?=$row["id"]?></td>
-      <td><?php
-
-          $query = "SELECT * FROM usuario WHERE id = '$row[user_id]'";
-          $result = $conn -> query($query);
-          $Data = mysqli_fetch_assoc($result);
-          echo $Data['Nome'];
-      
-      ?></td>      
+      <td><?= $row['user_id']?></td>      
       <td><?=$row["Texto"]?></td>     
       <td><?=$row["DataComent"]?></td>     
-      <td><button class="btn btn-primary" style="height:40px" onclick="variationEditForm('<?=$row['id']?>')">Edit</button></td>
-      <td><button class="btn btn-danger" style="height:40px"  onclick="variationDelete('<?=$row['id']?>')">Delete</button></td>
+      <td><button class="btn btn-danger" style="height:40px" onclick="comentarioDelete('<?=$row['id']?>')">Delete</button></td>
       </tr>
       <?php
             $count=$count+1;

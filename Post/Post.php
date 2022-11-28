@@ -41,9 +41,9 @@ $count = 0;
         <h2>For(um)</h2>
         <div class="navigation">
             <a href="../index.php">Sobre</a>
-            <a href="#">Contato</a>
+            <a href="../Forms/contato/contatoForm.php">Contato</a>
             <a href="../User/Explorar.php">Explorar</a>
-            <a href="./Forms/Login.php?logout">Sair</a>
+            <a href="../Forms/Login.php?logout">Sair</a>
         </div>
     </header>
 

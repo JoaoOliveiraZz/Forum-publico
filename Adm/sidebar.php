@@ -12,7 +12,7 @@
     <a href="#posts"   onclick="showPosts()" ><i class="fa fa-th-large"></i> Posts </a>
     <a href="#sizes"   onclick="showProblems()" ><i class="fa fa-th"></i> Contatos</a>
     <a href="#productsizes"   onclick="showComentarios()" ><i class="fa fa-th-list"></i> Comentários </a>    
-    <a href="#productsizes"   onclick="showComentarios()" ><i class="fa fa-th-list"></i> Log </a>    
+    <a href="#productsizes"   onclick="showLog()" ><i class="fa fa-th-list"></i> Log </a>    
   
   <!---->
 </div>

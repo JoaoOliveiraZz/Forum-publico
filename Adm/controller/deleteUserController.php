@@ -9,7 +9,7 @@
         echo"Usuario Deletado";
     }
     else{
-        echo "N";
+        echo "Não foi possível deletar";
     }
     
 ?>

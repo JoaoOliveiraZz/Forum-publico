@@ -84,8 +84,8 @@
                        
                        $sql="SELECT * FROM Contato";
                        $result=$conn-> query($sql);
-                       $row= $result-> fetch_row();
-                       echo round($row[0]);
+
+                       echo $result -> num_rows;
                    ?>
                    </h5>
                 </div>

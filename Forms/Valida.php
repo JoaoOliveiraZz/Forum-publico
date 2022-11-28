@@ -22,7 +22,19 @@
                 }else{
                     $_SESSION['login'] = $DataUser['id'];
                 }
-                // header('location: Login.php');
+                // Verificar log
+                $issetLog = "SELECT * FROM Log WHERE user_id = '$DataUser[id]'";
+                $result = $connect -> query($issetLog);
+                if($result -> num_rows != 0){
+                    $DataLog = date('Y-m-d H:i:s');
+                    $log = "UPDATE Log SET login = '$DataLog', logoff = '0000-00-00 00:00:00' WHERE user_id = '$DataUser[id]'";
+                }else{
+                    $DataLog = date('Y-m-d H:i:s');
+                    $log = "INSERT INTO Log (user_id, login, logoff) VALUES ('$DataUser[id]','$DataLog','0000-00-00 00:00:00')";
+
+                }
+                $insertLog = $connect -> query($log);
+                header('location: Login.php');
         }else{
             echo "<script>
                 alert('Login inválido, tente novamente')

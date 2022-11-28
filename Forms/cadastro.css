@@ -85,7 +85,19 @@ form{
     font-size: 1.2rem;
     color: #333;
 }
-
+textarea{
+    resize: none;
+    outline: none;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px;
+}
+textarea input:placeholder-shown{
+    color: #aaa;
+    font-weight: 500;
+}
 .input-field input:placeholder-shown{
     color: #aaa;
     font-weight: 500;
