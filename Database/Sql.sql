@@ -12,7 +12,7 @@ INSERT INTO Usuario (Nome, Email, Senha, Idade, FavLinguagem, Perfil) VALUES ('A
 
 CREATE TABLE `Post` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `user_id` int NOT NULL,
+  `idUser` int NOT NULL,
   `Titulo` varchar(255),
   `Linguagem` varchar(255),
   `Texto` varchar(500),

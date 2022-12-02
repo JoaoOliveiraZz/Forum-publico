@@ -21,9 +21,4 @@
         header("Location: ../Post/Cadastro.php");
     }
 
-
-
-
-
-
 ?>
